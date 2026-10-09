@@ -1,0 +1,70 @@
+name: Defecto
+description: Algo que debería funcionar y no funciona
+labels: ["type:bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Lo que más tiempo ahorra es la **diferencia entre lo que esperabas y lo que pasó**, y
+        los pasos exactos para reproducirlo. Un síntoma puede engañar: en este proyecto ya pasó
+        que un puerto ocupado se manifestara como un fallo de autenticación.
+
+  - type: textarea
+    id: que-paso
+    attributes:
+      label: Qué pasó
+      description: El comportamiento observado, con el mensaje de error literal si lo hay.
+    validations:
+      required: true
+
+  - type: textarea
+    id: que-esperaba
+    attributes:
+      label: Qué esperabas
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproducir
+    attributes:
+      label: Cómo reproducirlo
+      description: Los pasos mínimos. Si no es reproducible de forma fiable, decirlo.
+      placeholder: |
+        1. Abrir la app con sesión iniciada
+        2. Ir a Estado de cuenta
+        3. Girar el dispositivo
+    validations:
+      required: true
+
+  - type: textarea
+    id: entorno
+    attributes:
+      label: Entorno
+      description: >
+        Dispositivo, versión del sistema y si es build de debug o release. Un fallo que solo
+        aparece en release, o solo en un fabricante, se diagnostica distinto.
+      placeholder: Android 14, Pixel 7, Flutter 3.3x, build de debug
+    validations:
+      required: false
+
+  - type: textarea
+    id: pistas
+    attributes:
+      label: Pistas
+      description: >
+        Logs, captura o grabación, o lo que ya descartaste. Si hay stack trace, pegarlo
+        completo: en Flutter la línea que importa rara vez es la primera.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área
+      options:
+        - area:mobile
+        - area:backend
+        - area:frontend
+        - area:infra
+    validations:
+      required: true
